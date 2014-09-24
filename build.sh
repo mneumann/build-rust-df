@@ -7,7 +7,7 @@ WRK=`pwd`/work
 GH_COMMIT=67b97ab
 
 # XXX: Patch snapshot.py to download from ntecs.de
-export SNAPSHOT_FILE=`pwd`/rust-stage0-2014-08-29-6025926-dragonfly-x86_64-87b7d3d21de83dfe4c66a77fe7d3b85f14d97cf7.tar.bz2
+#export SNAPSHOT_FILE=`pwd`/rust-stage0-2014-08-29-6025926-dragonfly-x86_64-87b7d3d21de83dfe4c66a77fe7d3b85f14d97cf7.tar.bz2
 
 fetch()
 {
@@ -60,4 +60,4 @@ do_configure
 
 post_configure_patch
 
-compile
+#compile

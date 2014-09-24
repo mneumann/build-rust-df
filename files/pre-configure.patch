@@ -1,8 +1,18 @@
 diff --git a/src/etc/snapshot.py b/src/etc/snapshot.py
-index 82302da..93479a4 100644
+index 82302da..a670cfa 100644
 --- a/src/etc/snapshot.py
 +++ b/src/etc/snapshot.py
-@@ -81,6 +81,8 @@ def get_kernel(triple):
+@@ -28,7 +28,8 @@ if not src_dir:
+   raise Exception("missing env var CFG_SRC_DIR")
+ 
+ snapshotfile = os.path.join(src_dir, "src", "snapshots.txt")
+-download_url_base = "https://static.rust-lang.org/stage0-snapshots"
++#download_url_base = "https://static.rust-lang.org/stage0-snapshots"
++download_url_base = "http://www.ntecs.de/downloads/rust"
+ download_dir_base = "dl"
+ download_unpack_base = os.path.join(download_dir_base, "unpack")
+ 
+@@ -81,6 +82,8 @@ def get_kernel(triple):
          return "macos"
      if os_name == "freebsd":
          return "freebsd"
@@ -11,6 +21,28 @@ index 82302da..93479a4 100644
      return "linux"
  
  def get_cpu(triple):
+diff --git a/src/liblibc/lib.rs b/src/liblibc/lib.rs
+index bbccdf0..f6f542a 100644
+--- a/src/liblibc/lib.rs
++++ b/src/liblibc/lib.rs
+@@ -1158,6 +1158,17 @@ pub mod types {
+                     pub sun_family: sa_family_t,
+                     pub sun_path: [c_char, ..104]
+                 }
++                #[repr(C)]
++                pub struct ifaddrs {
++                    pub ifa_next: *mut ifaddrs,
++                    pub ifa_name: *mut c_char,
++                    pub ifa_flags: c_uint,
++                    pub ifa_addr: *mut sockaddr,
++                    pub ifa_netmask: *mut sockaddr,
++                    pub ifa_dstaddr: *mut sockaddr,
++                    pub ifa_data: *mut c_void
++                }
++
+             }
+         }
+ 
 diff --git a/src/snapshots.txt b/src/snapshots.txt
 index 9fcaa30..95be8c5 100644
 --- a/src/snapshots.txt
