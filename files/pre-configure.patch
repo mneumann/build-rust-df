@@ -1,0 +1,24 @@
+diff --git a/src/etc/snapshot.py b/src/etc/snapshot.py
+index 82302da..93479a4 100644
+--- a/src/etc/snapshot.py
++++ b/src/etc/snapshot.py
+@@ -81,6 +81,8 @@ def get_kernel(triple):
+         return "macos"
+     if os_name == "freebsd":
+         return "freebsd"
++    if os_name == "dragonfly":
++        return "dragonfly"
+     return "linux"
+ 
+ def get_cpu(triple):
+diff --git a/src/snapshots.txt b/src/snapshots.txt
+index 9fcaa30..95be8c5 100644
+--- a/src/snapshots.txt
++++ b/src/snapshots.txt
+@@ -1,5 +1,6 @@
+ S 2014-08-29 6025926
+   freebsd-x86_64 285330b798eefcc929fc94c9d0604b6172ce3309
++  dragonfly-x86_64 87b7d3d21de83dfe4c66a77fe7d3b85f14d97cf7
+   linux-i386 5b57ab2dc32952dc78551a955f3c1746b2d915a3
+   linux-x86_64 2624aeac3fe1b2359b61c1109e4708680e237ca5
+   macos-i386 deffce32408b023bcda84f6ce338ca3de02f406b
