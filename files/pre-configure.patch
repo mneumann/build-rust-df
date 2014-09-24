@@ -22,10 +22,18 @@ index 82302da..a670cfa 100644
  
  def get_cpu(triple):
 diff --git a/src/liblibc/lib.rs b/src/liblibc/lib.rs
-index bbccdf0..f6f542a 100644
+index bbccdf0..ee5c8ce 100644
 --- a/src/liblibc/lib.rs
 +++ b/src/liblibc/lib.rs
-@@ -1158,6 +1158,17 @@ pub mod types {
+@@ -1086,6 +1086,7 @@ pub mod types {
+                 pub type sighandler_t = size_t;
+             }
+             pub mod bsd44 {
++                use types::common::c95::{c_void};
+                 use types::os::arch::c95::{c_char, c_int, c_uint};
+ 
+                 pub type socklen_t = u32;
+@@ -1158,6 +1159,17 @@ pub mod types {
                      pub sun_family: sa_family_t,
                      pub sun_path: [c_char, ..104]
                  }
