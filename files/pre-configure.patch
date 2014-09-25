@@ -1,5 +1,5 @@
 diff --git a/src/etc/snapshot.py b/src/etc/snapshot.py
-index 82302da..a670cfa 100644
+index 82302da..34d4e95 100644
 --- a/src/etc/snapshot.py
 +++ b/src/etc/snapshot.py
 @@ -28,7 +28,8 @@ if not src_dir:
@@ -12,7 +12,15 @@ index 82302da..a670cfa 100644
  download_dir_base = "dl"
  download_unpack_base = os.path.join(download_dir_base, "unpack")
  
-@@ -81,6 +82,8 @@ def get_kernel(triple):
+@@ -37,6 +38,7 @@ snapshot_files = {
+     "macos": ["bin/rustc"],
+     "winnt": ["bin/rustc.exe"],
+     "freebsd": ["bin/rustc"],
++    "dragonfly": ["bin/rustc"]
+     }
+ 
+ winnt_runtime_deps = ["libgcc_s_dw2-1.dll",
+@@ -81,6 +83,8 @@ def get_kernel(triple):
          return "macos"
      if os_name == "freebsd":
          return "freebsd"
