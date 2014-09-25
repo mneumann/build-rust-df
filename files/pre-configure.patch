@@ -59,22 +59,3 @@ index bbccdf0..ee5c8ce 100644
              }
          }
  
-diff --git a/src/snapshots.txt b/src/snapshots.txt
-index 359b253..a2256d5 100644
---- a/src/snapshots.txt
-+++ b/src/snapshots.txt
-@@ -1,5 +1,6 @@
- S 2014-09-05 67b97ab
-   freebsd-x86_64 5ed208394cb2a378ddfaa005b6298d2f142ad47f
-+  dragonfly-x86_64 f81b1acfb5251c7ce9120a0c948c9ef1ce3b67a2
-   linux-i386 d90866947bfa09738cf8540d17a8eedc70988fcc
-   linux-x86_64 52955b8f7a3b1bf664345060f421101979ced9f2
-   macos-i386 2a38d39afa94ad6d274464ee4e82b1b98c2b3a11
-@@ -8,6 +9,7 @@ S 2014-09-05 67b97ab
- 
- S 2014-08-29 6025926
-   freebsd-x86_64 285330b798eefcc929fc94c9d0604b6172ce3309
-+  dragonfly-x86_64 87b7d3d21de83dfe4c66a77fe7d3b85f14d97cf7
-   linux-i386 5b57ab2dc32952dc78551a955f3c1746b2d915a3
-   linux-x86_64 2624aeac3fe1b2359b61c1109e4708680e237ca5
-   macos-i386 deffce32408b023bcda84f6ce338ca3de02f406b

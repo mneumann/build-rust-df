@@ -3,8 +3,8 @@
 PREFIX=/usr/local
 WRK=`pwd`/work
 
-# snapshot for: 2014-09-10
-GH_COMMIT=6faa4f3
+# snapshot for: 2014-09-16
+GH_COMMIT=828e075
 
 fetch()
 {
@@ -26,6 +26,12 @@ pre_configure_patch()
 {
   cd ${WRK}/rust
   patch -p1 < ${WRK}/../files/pre-configure.patch
+}
+
+snapshots_patch()
+{
+  cd ${WRK}/rust
+  patch -p1 < ${WRK}/../files/snapshots.patch
 }
 
 do_configure()
@@ -53,6 +59,7 @@ compile()
 
 fetch
 pre_configure_patch
+snapshots_patch
 do_configure
 post_configure_patch
 compile
