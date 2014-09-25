@@ -3,11 +3,8 @@
 PREFIX=/usr/local
 WRK=`pwd`/work
 
-# snapshot for: 2014-09-05
-GH_COMMIT=67b97ab
-
-# XXX: Patch snapshot.py to download from ntecs.de
-#export SNAPSHOT_FILE=`pwd`/rust-stage0-2014-08-29-6025926-dragonfly-x86_64-87b7d3d21de83dfe4c66a77fe7d3b85f14d97cf7.tar.bz2
+# snapshot for: 2014-09-10
+GH_COMMIT=6faa4f3
 
 fetch()
 {
@@ -20,6 +17,7 @@ fetch()
     git submodule update
   fi
   cd ${WRK}/rust
+  git pull
   git checkout -f ${GH_COMMIT}
   cd ${WRK}
 }
@@ -48,16 +46,13 @@ post_configure_patch()
 
 compile()
 {
+  cd ${WRK}/rust
   gmake
   gmake snap-stage3
 }
 
 fetch
-
 pre_configure_patch
-
 do_configure
-
 post_configure_patch
-
-#compile
+compile
